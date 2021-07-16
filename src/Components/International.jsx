@@ -8,7 +8,7 @@ function InternationalNews() {
     const [query, setQuery] = useState("international");
 
     const { isLoading, isError, setIsLoading, setIsError } = useContext(AppContext);
-    const apiKey = "aa5e294999944a439c748a4e1e9b6587";
+    const apiKey = "ee819a61329e466f89564d1da67b56c3";
 
 
     const getNewsData = (query) => {
