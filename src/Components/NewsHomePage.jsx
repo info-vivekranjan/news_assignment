@@ -9,7 +9,7 @@ function NewsHomePage() {
     const [query, setQuery] = useState("covid");
 
     const { isLoading, isError, setIsLoading, setIsError } = useContext(AppContext);
-    const apiKey = "788a8ea30caa4f3dadecb9476b3d3e36";
+    const apiKey = "ee819a61329e466f89564d1da67b56c3";
 
     const [page, setPage] = useState(1)
 
