@@ -11,16 +11,17 @@ function NewsHomePage() {
     const { isLoading, isError, setIsLoading, setIsError } = useContext(AppContext);
     const apiKey = "788a8ea30caa4f3dadecb9476b3d3e36";
 
+    const [page, setPage] = useState(1)
 
-    const getNewsData = (query) => {
+    const getNewsData = (query, page = 1) => {
 
         setIsLoading(true);
 
-        axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}&pageSize=10`)
+        axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}&pageSize=10&page=${page}`)
             .then((res) => {
 
                 setData(res.data.articles)
-                console.log(res);
+                console.log(res.data.articles);
             })
             .catch((err) => {
                 console.log(err);
@@ -40,8 +41,8 @@ function NewsHomePage() {
 
     useEffect(() => {
 
-        getNewsData(query);
-    }, [query])
+        getNewsData(query, page);
+    }, [query, page])
 
 
 
@@ -71,9 +72,9 @@ function NewsHomePage() {
                             isError ? <h3>Something went wrong...</h3> :
                                 <>
                                     {
-                                        data.map((item) => {
+                                        data.map((item, index) => {
 
-                                            return <div key={item.urlToImage} className={styles.eachNewsCont}>
+                                            return <div key={index} className={styles.eachNewsCont}>
                                                 <div className={styles.description}>
                                                     {item.description}
 
@@ -99,6 +100,12 @@ function NewsHomePage() {
 
                 </>
 
+            </div>
+
+            <div className={styles.pagination}>
+                <button className={styles.backBtn} disabled={page === 1} onClick={() => setPage(page - 1)}>Prev</button>
+                <button className={styles.currentBtn}>{page}</button>
+                <button className={styles.nextBtn} onClick={() => setPage(page + 1)}>Next</button>
             </div>
 
         </div>
