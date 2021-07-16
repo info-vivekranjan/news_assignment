@@ -1,7 +1,121 @@
 .SidebarCont{
-    border: 1px solid red;
-    width: 30%;
+    /* border: 1px solid red; */
+    width: 20%;
     height: 100vh;
     position: fixed;
+    padding-left:3% ;    
+    background-color: rgb(239, 254, 255);
+}
+
+.newsLogo > .logoLink{
+    color: rgb(39, 39, 39);
+text-align: left;
+}
+
+.CateCont{
+/* border: 1px solid black; */
+
+    display: flex;
+    flex-direction: column;
+    height: 55vh;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+}
+
+.ecahCateLinkCont > .ecahCateLink{
+
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(0, 99, 180);
+
+
+}
+
+.ecahCateLogoAndTitle{
+
+display: flex;
+align-items: center;
+    
+}
+
+.ecahCateLogo{
+
+    background-color: rgb(0, 99, 180);
+    color: white;
+    width: 30px;
+    padding: 5px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+
+
+.socialMedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialMedia > img{
+
+max-width: 30px;
+
+box-shadow: 1px 1px 8px 6px rgba(231, 231, 231, 0.082);
+margin: 5px;
+}
+
+
+.subscribeViaMail{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.subscribeViaMail>input{
+
+    width: 70%;
+    background-color: rgb(218, 248, 248);
+    padding: 11px 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+}
+
+@media only screen and (max-width: 868px) {
+
+    .SidebarCont{
+        /* border: 1px solid red; */
+    background-color: rgb(239, 254, 255);
+
+        width: 30%;
+        height: 100vh;
+        position: fixed;
+        padding-left:3% ;    
+    }
+    
+    
+    
+    
+    
+}
+
+
+@media only screen and (max-width: 570px) {
+
+    .SidebarCont{
+        /* border: 1px solid red; */
+    background-color: rgb(239, 254, 255);
+
+        width: 40%;
+        height: 100vh;
+        position: fixed;
+        padding-left:3% ;    
+    }
+    
+    
+    
     
 }

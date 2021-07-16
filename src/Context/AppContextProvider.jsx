@@ -6,16 +6,12 @@ const AppContext = createContext()
 
 function AppContextProvider({ children }) {
 
-
-    const [showSidebar, setShowSidebar] = useState(false);
-
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
 
     const value = {
-        showSidebar,
-        setShowSidebar,
+
         isLoading,
         isError,
         setIsLoading,

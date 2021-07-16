@@ -3,13 +3,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../Context/AppContextProvider';
 import styles from './Css/NewsHomePage.module.css';
 
-
-function NewsHomePage() {
+function InternationalNews() {
     const [data, setData] = useState([]);
-    const [query, setQuery] = useState("covid");
+    const [query, setQuery] = useState("international");
 
     const { isLoading, isError, setIsLoading, setIsError } = useContext(AppContext);
-    const apiKey = "788a8ea30caa4f3dadecb9476b3d3e36";
+    const apiKey = "aa5e294999944a439c748a4e1e9b6587";
 
 
     const getNewsData = (query) => {
@@ -41,19 +40,17 @@ function NewsHomePage() {
     useEffect(() => {
 
         getNewsData(query);
-    }, [query])
 
-
+    }, [])
 
     return (
-        <div className={styles.homePageCont}>
+        <div style={{ paddingLeft: "23%" }} className={styles.homePageCont}>
 
 
 
             <div className={styles.serachBoxCont}>
-
                 <input placeholder="Search News" onChange={(e) => setQuery(e.target.value)} value={query} />
-                <button onClick={() => getNewsData(query)}><i className="ri-search-line"></i></button>
+                <button onClick={() => getNewsData(query)}><i class="ri-search-line"></i></button>
             </div>
 
 
@@ -73,7 +70,7 @@ function NewsHomePage() {
                                     {
                                         data.map((item) => {
 
-                                            return <div key={item.urlToImage} className={styles.eachNewsCont}>
+                                            return <div className={styles.eachNewsCont}>
                                                 <div className={styles.description}>
                                                     {item.description}
 
@@ -108,4 +105,4 @@ function NewsHomePage() {
 }
 
 
-export { NewsHomePage }
+export { InternationalNews }
