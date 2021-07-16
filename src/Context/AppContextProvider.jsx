@@ -9,9 +9,17 @@ function AppContextProvider({ children }) {
 
     const [showSidebar, setShowSidebar] = useState(false);
 
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
+
+
     const value = {
         showSidebar,
-        setShowSidebar
+        setShowSidebar,
+        isLoading,
+        isError,
+        setIsLoading,
+        setIsError
     }
 
     return (

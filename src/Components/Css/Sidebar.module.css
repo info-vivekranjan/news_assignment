@@ -1,0 +1,7 @@
+.SidebarCont{
+    border: 1px solid red;
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+    
+}
